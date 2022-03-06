@@ -1,5 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
+authors: 
 title: "osu-regression"
 version: 1.0.0
 date-released: 2022-03-06
