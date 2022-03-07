@@ -18,17 +18,21 @@ with open('osu_top_players.txt', 'r') as f:
             y.append(player['pp'])
             lables.append(player['username'])
 
-
 ## Create reject outliers function
-def reject_outliers(data, threshold=2.5):
+def reject_outliers(data, threshold=2.5, variable=None):
     median = np.median(data); # original median of the data
+    print("Median for " + variable + ": " + str(median))
     diff = np.abs(data - median); # difference from the median
     mdev = np.median(diff); # median absolute deviation
+    print("Median absolute deviation for " + variable + ": " + str(mdev))
+    print("2.5 * MAD for " + variable + ": " + str(mdev * threshold))
+    print("Upper bound for " + variable + ": " + str(median + (mdev * threshold)))
+    print("Lower bound for " + variable + ": " + str(median - (mdev * threshold)))
     return data[diff < mdev * threshold]; # return the data that is within the threshold
 
 ## Removes outliers
-removed_outliers_x = reject_outliers(np.asarray(x))
-removed_outliers_y = reject_outliers(np.asarray(y))
+removed_outliers_x = reject_outliers(np.asarray(x), 10, "x")
+removed_outliers_y = reject_outliers(np.asarray(y), 10, "y")
 new_x = [];
 new_y = [];
 for (i, player) in enumerate(data):
