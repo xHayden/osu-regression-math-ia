@@ -1,8 +1,0 @@
-cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
-authors:
-  - family-names: Anonymous
-title: "osu-regression"
-version: 1.0.0
-date-released: 2022-03-06
-url: "https://github.com/xHayden/osu-regression-math-ia"
