@@ -85,7 +85,7 @@ r_squared = 1 - (sum_of_squared_error/sum_of_squared_total)
 print("R^2 = " + str(r_squared))
 
 ## Plot linear regression
-figure(figsize=(8, 6), dpi=200)
+figure(figsize=(8, 6), dpi=340)
 plt.ylabel('Performance Points (pp)')
 plt.xlabel('Playcount')
 plt.plot(x, y, 'ro', markersize=0.5)
